@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' href='style.css'>
+    <title>Steve Jackson's Sorcery! Player Sheet</title>
+  </head>
+  <body>
+    <div id="page">
+      <div id=top-row>
+        <div id="skill" class="max-cur-box box small">
+          <label for="max-skill">Max skill:</label>
+          <input id="max-skill" name="max-skill" type="number" min=1>
+          <label for="current-skill">Current skill:</label>
+          <input id="current-skill" name="current-skill" type="number" min=1>
+        </div>
+        <div id="hp" class="max-cur-box box small">
+          <label for="max-hp">Max HP:</label>
+          <input id="max-hp" name="max-hp" type="number" min=1>
+          <label for="current-hp">Current HP:</label>
+          <input id="current-hp" name="current-hp" type="number" min=1>
+        </div>
+        <div id="luck" class="max-cur-box box small">
+          <label for="max-luck">Max Luck:</label>
+          <input id="max-luck" name="max-luck" type="number" min=1>
+          <label for="current-luck">Current Luck:</label>
+          <input id="current-luck" name="current-luck" type="number" min=1>
+        </div>
+        <div id="checkpoint" class="box">
+          <label for="page-num">Checkpoint:</label>
+          <input id="page-num" name="page-num" type="number" min=1>
+        </div>
+      </div>
+      <div id="second-row">
+        <div id="gold-and-treasures" class="max-cur-box box medium">
+          <label for="gold">Gold:</label>
+          <input id="gold" name="gold" type="number" min=0>
+          <label for="treasures">Treasures:</label>
+          <textarea id="treasures" name="treasures"></textarea>
+        </div>
+        <div id="food-and-provisions" class="max-cur-box box medium">
+          <label for="food">Meals:</label>
+          <input id="food" name="food" type="number" min=0>
+          <label for="provisions">Provisions:</label>
+          <textarea id="provisions" name="provisions"></textarea>
+        </div>
+      </div>
+      <div id="inventory" class="box big">
+        <label for="equipment-and-items">Equipment and Items:</label>
+        <textarea id="equipment-and-items" name="equipment-and-items"></textarea>
+      </div>
+      <div id="special" class="box big">
+        <label for="conditions">Conditions and Curses:</label>
+        <textarea id="conditions" name="conditions"></textarea>
+      </div>
+      <div id="notes" class="box big">
+        <label for="clues">Clues and Notes:</label>
+        <textarea id="clues" name="clues"></textarea>
+      </div>
+    </div>
+  </body>  
