@@ -1,0 +1,185 @@
+html {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background: url('https://play-lh.googleusercontent.com/oWrXfn2wGTMCKfaV9DdtNONTRrhAcONBtoO9Nlw6_sb5FwWdkJIElDuqlguKR7jZAw') no-repeat center center fixed;
+  background-size: cover;
+}
+
+#sheet {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+#top-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) 0.5fr;
+}
+
+#second-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.box {
+  border: 5px black solid;
+  border-radius: 5px;
+  background: azure;
+  padding: 10px;
+  margin: 10px;
+  padding-top: 5px;
+}
+
+.max-cur-box {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 5px;
+  text-align: center;
+}
+
+label {
+  margin-top: 5px;
+}
+
+textarea {
+  height: 200px;
+}
+
+.medium {
+  display: grid;
+  grid-template-areas:
+    "num-title num num"
+    "title title title"
+    "text text text"
+}
+
+.medium label {
+  grid-area: title;
+}
+
+.medium [type="number"] {
+  grid-area: num;
+}
+
+.medium label:first-child {
+  grid-area: num-title;
+}
+
+.medium textarea {
+  grid-area: text;
+}
+
+.big {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+[type="file"] {
+  display: none;
+}
+
+#file-upload {
+  align-items: center;
+  padding: 20px;
+}
+
+button, [for="upload"] {
+  border: 2px black solid;
+  border-radius: 7px;
+  background: green;
+  font-size: 1.2em;
+  padding: 15px;
+  margin: 10px;
+  text-align: center;
+}
+
+#file-upload {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 35px;
+}
+
+#file-upload * {
+  margin: -10px;
+}
+
+#checkpoint {
+  text-align: center;
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+}
+
+footer {
+  background: rebeccapurple;
+  padding: 1px;
+  padding-left: 10px;
+}
+
+/* https://stackoverflow.com/questions/45396280/customizing-increment-arrows-on-input-of-type-number-using-css */
+
+/** Force up and down arrow for number input */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+   opacity: 1;
+}
+
+/**   **************  */
+input[type="number"] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.number-input {
+  border: 1px solid #ddd;
+  display: inline-flex;
+}
+
+.number-input,
+.number-input * {
+  box-sizing: border-box;
+  margin: auto;
+}
+
+.number-input button {
+  outline:none;
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: none;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  margin: 0;
+  position: relative;
+}
+
+.number-input button:before,
+.number-input button:after {
+  display: inline-block;
+  position: absolute;
+  content: '';
+  width: 1rem;
+  height: 2px;
+  background-color: #212121;
+  transform: translate(-50%, -50%);
+}
+.number-input button.plus:after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.number-input input[type=number] {
+  font-family: sans-serif;
+  max-width: 4.25rem;
+  padding: .5rem;
+  border: solid #ddd;
+  border-width: 0 5px;
+  font-size: 1.6rem;
+  height: 2rem;
+  font-weight: bold;
+  text-align: center;
+}
