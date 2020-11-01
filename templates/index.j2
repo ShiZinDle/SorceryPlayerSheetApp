@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href='{{ url_for('static', filename='style.css') }}'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>Steve Jackson"s Sorcery! Player Sheet</title>
   </head>
   <body>
@@ -94,7 +94,7 @@
         <label for="clues">Clues and Notes:</label>
         <textarea id="clues" name="clues">{% if notes %}{{notes}}{% endif %}</textarea>
       </div>
-      <button id="download-button">Download Sheet</button>
+      <a href="{{ url_for('download') }}"><button id="download-button">Download Sheet</button></a>
     </form>
     <form id="file-upload" action="/upload" method="POST" enctype=multipart/form-data>
       <label for="upload">Choose file</label>

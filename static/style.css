@@ -113,6 +113,11 @@ footer {
   padding-left: 10px;
 }
 
+a {
+  display: grid;
+  text-decoration: none;
+}
+
 /* https://stackoverflow.com/questions/45396280/customizing-increment-arrows-on-input-of-type-number-using-css */
 
 /** Force up and down arrow for number input */
