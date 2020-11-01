@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 
 def export_json(d):
-    with open('downloads/player_sheet.json', 'w') as file:
+    with open('player_sheet.json', 'w') as file:
         file.write(json.dumps(d))
 
 
@@ -52,8 +52,7 @@ def home() -> str:
 def download():
     info = get_sheet_info()
     export_json(info)
-    return send_file('downloads/player_sheet.json', attachment_filename='player_sheet.json', as_attachment=True)
-    # return render_sheet(info)
+    return send_file('player_sheet.json', attachment_filename='player_sheet.json', as_attachment=True)
 
 
 @app.route('/upload', methods=['POST'])
@@ -67,5 +66,4 @@ def upload():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
-    # app.run(threaded=True, port=5000)
+    app.run(threaded=True, port=5000)
