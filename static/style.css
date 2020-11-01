@@ -3,9 +3,6 @@ html {
   background: url('https://play-lh.googleusercontent.com/oWrXfn2wGTMCKfaV9DdtNONTRrhAcONBtoO9Nlw6_sb5FwWdkJIElDuqlguKR7jZAw') no-repeat center center fixed;
   background-size: cover;
   width: fit-content;
-}
-
-#sheet {
   display: grid;
   grid-template-columns: 1fr;
 }
