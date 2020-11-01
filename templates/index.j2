@@ -10,13 +10,13 @@
     <form id="sheet" action="/download" method="POST">
       <div id=top-row>
         <div id="skill" class="max-cur-box box small">
-          <label for="max-skill">Max skill:</label>
+          <label for="max-skill">Max Skill:</label>
           <div class="number-input">
             <button type="button" onclick="this.parentNode.querySelector('input[type=number]').stepDown()"></button>
             <input id="max-skill" name="max-skill" type="number" min=1 value={% if max_skill %}{{max_skill}}{% else %}1{% endif %}>
             <button  class="plus" type="button" onclick="this.parentNode.querySelector('input[type=number]').stepUp()"></button>
           </div>
-          <label for="cur-skill">Current skill:</label>
+          <label for="cur-skill">Current Skill:</label>
           <div class="number-input">
             <button type="button" onclick="this.parentNode.querySelector('input[type=number]').stepDown()"></button>
             <input id="cur-skill" name="cur-skill" type="number" min=1 value={% if cur_skill %}{{cur_skill}}{% else %}1{% endif %}>
@@ -24,16 +24,16 @@
           </div>
         </div>
         <div id="hp" class="max-cur-box box small">
-          <label for="max-hp">Max HP:</label>
+          <label for="max-hp">Max Stamina:</label>
           <div class="number-input">
             <button type="button" onclick="this.parentNode.querySelector('input[type=number]').stepDown()"></button>
             <input id="max-hp" name="max-hp" type="number" min=1 value={% if max_hp %}{{max_hp}}{% else %}1{% endif %}>
             <button  class="plus" type="button" onclick="this.parentNode.querySelector('input[type=number]').stepUp()"></button>
           </div>
-          <label for="cur-hp">Current HP:</label>
+          <label for="cur-hp">Current Stamina:</label>
           <div class="number-input">
             <button type="button" onclick="this.parentNode.querySelector('input[type=number]').stepDown()"></button>
-            <input id="cur-hp" name="cur-hp" type="number" min=1 value={% if cur_hp %}{{cur_hp}}{% else %}1{% endif %}>
+            <input id="cur-hp" name="cur-hp" type="number" min=0 value={% if cur_hp %}{{cur_hp}}{% else %}0{% endif %}>
             <button  class="plus" type="button" onclick="this.parentNode.querySelector('input[type=number]').stepUp()"></button>
           </div>
         </div>
@@ -65,7 +65,7 @@
           <label for="gold">Gold:</label>
           <div class="number-input">
             <button type="button" onclick="this.parentNode.querySelector('input[type=number]').stepDown()"></button>
-            <input id="gold" name="gold" type="number" min=1 value={% if gold %}{{gold}}{% else %}1{% endif %}>
+            <input id="gold" name="gold" type="number" min=0 value={% if gold %}{{gold}}{% else %}0{% endif %}>
             <button  class="plus" type="button" onclick="this.parentNode.querySelector('input[type=number]').stepUp()"></button>
           </div>
           <label for="treasures">Treasures:</label>
@@ -75,7 +75,7 @@
           <label for="food">Meals:</label>
           <div class="number-input">
             <button type="button" onclick="this.parentNode.querySelector('input[type=number]').stepDown()"></button>
-            <input id="food" name="food" type="number" min=1 value={% if food %}{{food}}{% else %}1{% endif %}>
+            <input id="food" name="food" type="number" min=0 value={% if food %}{{food}}{% else %}0{% endif %}>
             <button  class="plus" type="button" onclick="this.parentNode.querySelector('input[type=number]').stepUp()"></button>
           </div>
           <label for="provisions">Provisions:</label>
@@ -94,12 +94,12 @@
         <label for="clues">Clues and Notes:</label>
         <textarea id="clues" name="clues">{% if notes %}{{notes}}{% endif %}</textarea>
       </div>
-      <a href="{{ url_for('download') }}"><button id="download-button">Download Sheet</button></a>
+      <a href="{{ url_for('download') }}"><button id="download-button">Download sheet</button></a>
     </form>
     <form id="file-upload" action="/upload" method="POST" enctype=multipart/form-data>
       <label for="upload">Choose file</label>
       <input id="upload" name="upload" type="file" accept=".json">
-      <button id="upload-button">Load sheet from file</button>
+      <button id="upload-button">Load sSheet from file</button>
     </form>
     <footer>
       <p>
