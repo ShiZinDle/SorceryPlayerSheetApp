@@ -1,4 +1,5 @@
 import json
+from json.decoder import JSONDecodeError
 
 from flask import Flask, render_template, request, send_file
 
@@ -58,10 +59,10 @@ def download():
 @app.route('/upload', methods=['POST'])
 def upload():
     file = request.files['upload']
-    if file.filename != '':
+    try:
         sheet = json.loads(file.read())
         return render_sheet(sheet)
-    else:
+    except (JSONDecodeError, TypeError):
         return render_sheet(get_sheet_info())
 
 
