@@ -46,13 +46,14 @@ textarea {
 .medium {
   display: grid;
   grid-template-areas:
-    "num-title num num"
-    "title title title"
-    "text text text"
+    "num-title num-title num num"
+    "title title title title"
+    "text text text text"
 }
 
 .medium label {
   grid-area: title;
+  text-align: end;
 }
 
 .medium [type="number"] {
@@ -111,6 +112,8 @@ footer {
   background: rebeccapurple;
   padding: 1px;
   padding-left: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 a {
