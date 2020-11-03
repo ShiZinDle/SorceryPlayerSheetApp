@@ -110,8 +110,9 @@ button, [for="upload"] {
 
 footer {
   background: rebeccapurple;
-  padding: 1px;
+  padding: 10px;
   padding-left: 10px;
+  padding-top: 1px;
   margin-left: 10px;
   margin-right: 10px;
 }
@@ -119,6 +120,11 @@ footer {
 a {
   display: grid;
   text-decoration: none;
+}
+
+footer a {
+  display: initial;
+  color: limegreen;
 }
 
 /* https://stackoverflow.com/questions/45396280/customizing-increment-arrows-on-input-of-type-number-using-css */
