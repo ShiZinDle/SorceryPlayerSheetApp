@@ -7,7 +7,7 @@
     <title>Steve Jackson"s Sorcery! Player Sheet</title>
   </head>
   <body>
-    <form id="sheet" action="/download" method="POST">
+    <form id="sheet" method="POST" enctype="multipart/form-data">
       <div id=top-row>
         <div id="skill" class="max-cur-box box small">
           <label for="max-skill">Max Skill:</label>
@@ -94,12 +94,12 @@
         <label for="clues">Clues and Notes:</label>
         <textarea id="clues" name="clues">{% if notes %}{{notes}}{% endif %}</textarea>
       </div>
-      <a href="{{ url_for('download') }}"><button id="download-button">Download sheet</button></a>
-    </form>
-    <form id="file-upload" action="/upload" method="POST" enctype=multipart/form-data>
-      <label for="upload">Choose file</label>
-      <input id="upload" name="upload" type="file" accept=".json">
-      <button id="upload-button">Load sheet from file</button>
+      <a href="{{ url_for('download') }}"><button id="download-button" formaction="/download">Download sheet</button></a>
+      <div id="file-upload">
+        <label for="upload">Choose file</label>
+        <input id="upload" name="upload" type="file" accept=".json">
+        <button id="upload-button" formaction="/upload">Load sheet from file</button>
+      </div>
     </form>
     <footer>
       <p>
