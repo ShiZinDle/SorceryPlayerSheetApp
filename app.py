@@ -24,7 +24,6 @@ def get_sheet_info() -> MY_DICT:
     info['cur_hp'] = request.form.get('cur-hp')
     info['max_luck'] = request.form.get('max-luck')
     info['cur_luck'] = request.form.get('cur-luck')
-    info['checkpoint'] = request.form.get('page-num')
     info['gold'] = request.form.get('gold')
     info['treasures'] = request.form.get('treasures')
     info['food'] = request.form.get('food')
@@ -32,6 +31,11 @@ def get_sheet_info() -> MY_DICT:
     info['inventory'] = request.form.get('equipment-and-items')
     info['special'] = request.form.get('conditions')
     info['notes'] = request.form.get('clues')
+    info['checkpoint'] = request.form.get('page-num')
+    info['book1'] = request.form.get('book1')
+    info['book2'] = request.form.get('book2')
+    info['book3'] = request.form.get('book3')
+    info['book4'] = request.form.get('book4')
     return info
 
 
@@ -42,10 +46,12 @@ def render_sheet(info: Optional[MY_DICT]= None) -> str:
             max_skill = info['max_skill'], cur_skill = info['cur_skill'],
             max_hp = info['max_hp'], cur_hp = info['cur_hp'],
             max_luck = info['max_luck'], cur_luck = info['cur_luck'],
-            checkpoint = info['checkpoint'], gold = info['gold'],
-            treasures = info['treasures'], food = info['food'],
-            provisions = info['provisions'], inventory = info['inventory'],
-            special = info['special'], notes = info['notes'])
+            gold = info['gold'], treasures = info['treasures'],
+            food = info['food'], provisions = info['provisions'],
+            inventory = info['inventory'], special = info['special'],
+            notes = info['notes'], checkpoint = info['checkpoint'],
+            book1 = info['book1'], book2 = info['book2'],
+            book3 = info['book3'], book4 = info['book4'])
     else:
         return render_template('index.j2')
 

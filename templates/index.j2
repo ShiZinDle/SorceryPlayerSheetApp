@@ -51,14 +51,6 @@
             <button  class="plus" type="button" onclick="this.parentNode.querySelector('input[type=number]').stepUp()"></button>
           </div>
         </div>
-        <div id="checkpoint" class="box">
-          <label for="page-num">Checkpoint:</label>
-          <div class="number-input">
-            <button type="button" onclick="this.parentNode.querySelector('input[type=number]').stepDown()"></button>
-            <input id="page-num" name="page-num" type="number" min=1 value={% if checkpoint %}{{checkpoint}}{% else %}1{% endif %}>
-            <button  class="plus" type="button" onclick="this.parentNode.querySelector('input[type=number]').stepUp()"></button>
-          </div>
-        </div>
       </div>
       <div id="second-row">
         <div id="gold-and-treasures" class="max-cur-box box medium">
@@ -93,6 +85,48 @@
       <div id="notes" class="box big">
         <label for="clues">Clues and Notes:</label>
         <textarea id="clues" name="clues">{% if notes %}{{notes}}{% endif %}</textarea>
+      </div>
+      <div id="death-save">
+        <div id="checkpoint" class="box">
+          <label for="page-num">Checkpoint:</label>
+          <div class="number-input">
+            <button type="button" onclick="this.parentNode.querySelector('input[type=number]').stepDown()"></button>
+            <input id="page-num" name="page-num" type="number" min=1 value={% if checkpoint %}{{checkpoint}}{% else %}1{% endif %}>
+            <button  class="plus" type="button" onclick="this.parentNode.querySelector('input[type=number]').stepUp()"></button>
+          </div>
+        </div>
+        <div class="deathcount box">
+          <label for="book1">Book 1 Death Count:</label>
+          <div class="number-input">
+            <button type="button" onclick="this.parentNode.querySelector('input[type=number]').stepDown()"></button>
+            <input id="book1" name="book1" type="number" min=0 value={% if book1 %}{{book1}}{% else %}0{% endif %}>
+            <button  class="plus" type="button" onclick="this.parentNode.querySelector('input[type=number]').stepUp()"></button>
+          </div>
+        </div>
+        <div class="deathcount box">
+          <label for="book2">Book 2 Death Count:</label>
+          <div class="number-input">
+            <button type="button" onclick="this.parentNode.querySelector('input[type=number]').stepDown()"></button>
+            <input id="book2" name="book2" type="number" min=0 value={% if book2 %}{{book2}}{% else %}0{% endif %}>
+            <button  class="plus" type="button" onclick="this.parentNode.querySelector('input[type=number]').stepUp()"></button>
+          </div>
+        </div>
+        <div class="deathcount box">
+          <label for="book3">Book 3 Death Count:</label>
+          <div class="number-input">
+            <button type="button" onclick="this.parentNode.querySelector('input[type=number]').stepDown()"></button>
+            <input id="book3" name="book3" type="number" min=0 value={% if book3 %}{{book3}}{% else %}0{% endif %}>
+            <button  class="plus" type="button" onclick="this.parentNode.querySelector('input[type=number]').stepUp()"></button>
+          </div>
+        </div>
+        <div class="deathcount box">
+          <label for="book4">Book 4 Death Count:</label>
+          <div class="number-input">
+            <button type="button" onclick="this.parentNode.querySelector('input[type=number]').stepDown()"></button>
+            <input id="book4" name="book4" type="number" min=0 value={% if book4 %}{{book4}}{% else %}0{% endif %}>
+            <button  class="plus" type="button" onclick="this.parentNode.querySelector('input[type=number]').stepUp()"></button>
+          </div>
+        </div>
       </div>
       <a href="{{ url_for('download') }}"><button id="download-button" formaction="/download">Download sheet</button></a>
       <div id="file-upload">
