@@ -5,6 +5,12 @@ from typing import Dict, Optional
 from flask import Flask, render_template, request, Response, send_file
 
 MY_DICT = Dict[str, Optional[str]]
+SHEET_KEYS = ['max_skill', 'cur_skill', 'max_hp',
+              'cur_hp', 'max_luck', 'cur_luck',
+              'gold', 'treasures', 'food',
+              'provisions', 'inventory', 'special',
+              'notes', 'checkpoint', 'book1',
+              'book2', 'book3', 'book4']
 
 app = Flask(__name__)
 
@@ -37,6 +43,15 @@ def get_sheet_info() -> MY_DICT:
     info['book3'] = request.form.get('book3')
     info['book4'] = request.form.get('book4')
     return info
+
+
+def fix_sheet(info: MY_DICT) -> MY_DICT:
+    """Add keys to the player sheet where missing"""
+    temp = info.copy()
+    for key in SHEET_KEYS:
+        if key not in temp:
+            temp[key] = None
+    return temp
 
 
 def render_sheet(info: Optional[MY_DICT]= None) -> str:
@@ -76,7 +91,8 @@ def upload() -> str:
     file = request.files['upload']
     try:
         sheet = json.loads(file.read())
-        return render_sheet(sheet)
+        updated_sheet = fix_sheet(sheet)
+        return render_sheet(updated_sheet)
     except (JSONDecodeError, TypeError):
         info = get_sheet_info()
         return render_sheet(info)
